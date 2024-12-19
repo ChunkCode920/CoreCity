@@ -1,0 +1,76 @@
+Everything below is necessary for the creation of the core_city database. Just copy and paste into phpMyAdmin!
+
+
+Create database called: core_city
+
+
+
+CREATE TABLE users (
+	user_id INTEGER NOT NULL AUTO_INCREMENT,
+    fullname VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    joined_on date NOT NULL,
+    role enum('user', 'staff', 'admin'),
+    pfp VARCHAR(255),
+    
+    PRIMARY KEY(user_id)
+) ENGINE = InnoDB;
+
+CREATE TABLE staff (
+	staff_id INTEGER NOT NULL AUTO_INCREMENT,
+    fullname VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    joined_on date NOT NULL,
+    role enum('user', 'staff', 'admin'),
+    pfp VARCHAR(255),
+    
+    PRIMARY KEY(staff_id)
+) ENGINE = InnoDB;
+
+CREATE TABLE admin (
+	admin_id INTEGER NOT NULL AUTO_INCREMENT,
+    fullname VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    joined_on date NOT NULL,
+    role enum('user', 'staff', 'admin'),
+    pfp VARCHAR(255),
+    
+    PRIMARY KEY(admin_id)
+) ENGINE = InnoDB;
+
+
+CREATE TABLE reports (
+    report_id INTEGER NOT NULL AUTO_INCREMENT,
+    user_id INTEGER NOT NULL,
+    message TEXT NOT NULL,
+    created_at datetime,
+
+    PRIMARY KEY (report_id),
+
+    CONSTRAINT FOREIGN KEY (user_id)
+        REFERENCES users (user_id)
+        ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+CREATE TABLE appointments (
+    appointment_id INTEGER NOT NULL AUTO_INCREMENT,
+    user_id INTEGER NOT NULL,
+    staff_id INTEGER NOT NULL,
+    appointment_date datetime NOT NULL,
+    status enum('pending', 'confirmed', 'cancelled'),
+    created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    PRIMARY KEY(appointment_id),
+
+    CONSTRAINT FOREIGN KEY (user_id) REFERENCES users (user_id)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT FOREIGN KEY (staff_id) REFERENCES staff (staff_id)
+        ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;

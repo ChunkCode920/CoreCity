@@ -1,0 +1,2 @@
+The following files in this code are meant to create samples within the program. 
+Please run them first before running the login.php file.
