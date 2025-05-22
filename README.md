@@ -5,5 +5,9 @@ Core City is a web development project made during my senior year. The purpose o
 ## Prerequisites 
 Once the files have been downloaded, you'll need to download XAMPP on your device and place the project file into: \xampp\htdocs folder. XAMPP should be running at this time and it is useful to have a tab open for phpMyAdmin so you can see any possible database changes made.
 
+
+### Languages/Technologies Used
+As mentioned previously, XAMPP was used as well as a whole host of programming/scripting languages. The current list includes HTML, CSS, JavaScript, Bootstrap, PHP, and SQL. I got to learn how to use SQL databases from a simple command line and also the more user-friendly GUI interface provided by phpMyAdmin. 
+
 ### Extra Information
 In addition to the code provided in the project folder, there are also sample photos that can be used for User/Staff/Admin profile pictures. Included in the files are also SQL queries to create tables for Users/Staff/Admin and for uploading sample Staff and Admin for testers to login with. 
