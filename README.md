@@ -12,7 +12,7 @@ As mentioned previously, XAMPP was used as well as a whole host of programming/s
 ### Extra Information
 In addition to the code provided in the project folder, there are also sample photos that can be used for User/Staff/Admin profile pictures. Included in the files are also SQL queries to create tables for Users/Staff/Admin and for uploading sample Staff and Admin for testers to login with. 
 
-### Lessons Learned
+## Lessons Learned
 I learned that making a website was equally as difficult as I thought it was, but in plenty of ways it was much simpler than I realized. Working with a database was probably one of my favorite parts of the project because I actually got to learn how account information was actually made and stored into a database. Furthermore, it also taught me how passwords that users have chosen are placed into a cipher to protect them in case of an emergency situation where the database has been breached. 
 
 While making this project, I also recognized one of the glaring issues I ran into was creating a proper organizational structure. It's safe to say that there's still plenty of work I could have done on that end but making this project help to highlight that issue. 
